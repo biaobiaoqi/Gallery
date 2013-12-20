@@ -14,15 +14,14 @@ $(function () {
     $.ajax({
         url: (window.location.protocol === 'https:' ?
                 'https://' : 'http://') +
-                'localhost:9292/getPhotosLists/',
+                '106.186.114.43:9292/getPhotosLists/',
         data: {
             format: 'json',
             api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
         },
         dataType: 'jsonp',
-        jsonp: 'jsoncallback'
+        jsonp: 'callback'
     }).done(function (result) {
-        alert("哈哈");
 
         var carouselLinks = [],
             linksContainer = $('#links'),
@@ -37,7 +36,7 @@ $(function () {
                 .attr('data-gallery', '')
                 .appendTo(linksContainer);
             carouselLinks.push({
-                href: baseUrl + '?imageView/2/w/300/h/300',//middle
+                href: baseUrl + '?imageView/2/w/600/h/600',//middle
                 title: photo.title
             });
         });
