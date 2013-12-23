@@ -14,7 +14,7 @@ $(function () {
     $.ajax({
         url: (window.location.protocol === 'https:' ?
                 'https://' : 'http://') +
-                '106.186.114.43:9292/getPhotosLists/',
+                '106.186.114.43:9292/getHorizPhotosList/',
         data: {
             format: 'json',
             api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
