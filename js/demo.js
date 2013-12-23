@@ -22,13 +22,12 @@ $(function () {
         dataType: 'jsonp',
         jsonp: 'callback'
     }).done(function (result) {
-
         var carouselLinks = [],
             linksContainer = $('#links'),
             baseUrl;
         // Add the demo images as links with thumbnails to the page:
-        $.each(result.photos.photo, function (index, photo) {
-            baseUrl = 'http://biaobiaoqi.u.qiniudn.com/' + photo.id; 
+        $.each(result.photos, function (index, photo) {
+            baseUrl = 'http://r-gallery.u.qiniudn.com/' + photo.id; 
             $('<a/>')
                 .append($('<img>').prop('src', baseUrl + '?imageView/2/w/75/h/75')) //small
                 .prop('href', baseUrl + '?imageView/2/w/800/h/800') //big
